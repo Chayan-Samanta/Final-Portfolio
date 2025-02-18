@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-950 text-neutral-50 font-space-grotesk;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500;
+}
+
+.hover-gradient {
+  @apply hover:bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300;
+}
+
+.card-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-scroll {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  padding: 1rem 0;
+}
+
+.skills-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.skills-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Optional: Add smooth scrollbar for webkit browsers */
+.skills-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.skills-scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 2px;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Form focus effects */
+.form-focus-ring {
+  @apply focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50;
+}
+
+/* Input autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(23 23 23) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10;
+}
+
+/* Button gradient animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-button {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Button hover effect */
+.button-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.button-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(139, 92, 246, 0.5);
+}
+
+/* Button press effect */
+.button-hover-effect:active {
+  transform: translateY(0px);
+  box-shadow: 0 5px 10px -5px rgba(139, 92, 246, 0.5);
+}
