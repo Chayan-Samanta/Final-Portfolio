@@ -1,6 +1,6 @@
 [build]
   base = "project"
-  command = "npm install vite --save-dev && npm install --legacy-peer-deps && npx vite build"
+  command = "npm install -g vite && npm install --legacy-peer-deps && npx vite build --config project/vite.config.ts"
   publish = "project/dist"
 
 [build.environment]
