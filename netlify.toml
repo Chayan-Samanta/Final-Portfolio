@@ -1,6 +1,8 @@
 [build]
   base = "project"
-  command = "npm install vite @vitejs/plugin-react --save-dev && npm install --legacy-peer-deps && npx vite build --config vite.config.ts"
+  command = "npm install vite@6.1.0 @vitejs/plugin-react --save-dev && npm install --legacy-peer-deps && npm run build"
+  command = "npm install vite@5.4.2 @vitejs/plugin-react --save-dev && npm install --legacy-peer-deps && npm run build"
+
 
   publish = "project/dist"
 
